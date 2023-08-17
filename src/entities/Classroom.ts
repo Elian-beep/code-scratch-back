@@ -18,6 +18,9 @@ export class Classroom{
     @CreateDateColumn()
     created_at: Date;
 
+    @Column()
+    link: string;
+
     @ManyToOne(() => Instructor)
     @JoinColumn({ name: "instructor_id" })
     instructor_id: Instructor;

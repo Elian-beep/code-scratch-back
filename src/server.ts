@@ -1,6 +1,7 @@
 import express from "express";
 import "reflect-metadata";
 import { connectionSource } from "./database/ormconfig";
+import { routes } from "./routes";
 
 const app = express();
 const port = 8080;
@@ -11,6 +12,6 @@ connectionSource
     .catch(err => console.error("Erro durante inicialização do DataSource: ", err));
 
 app.use(express.json());
-// app.use(routes);
+app.use(routes);
 
 app.listen(port, () => console.log(`Servidor rodando em: http://localhost:${port}`));
