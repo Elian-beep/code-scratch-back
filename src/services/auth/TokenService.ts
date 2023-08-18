@@ -10,7 +10,8 @@ export class TokenService{
             },
             secret,
             {
-                expiresIn: 3600
+                // expiresIn: 3600
+                expiresIn: 30
             }
         );
         return token;

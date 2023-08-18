@@ -20,8 +20,7 @@ export class CreateInstructor1691715887258 implements MigrationInterface {
                         isUnique: true
                     },{
                         name: "password",
-                        type: "varchar",
-                        length: "16"
+                        type: "varchar"
                     },{
                         name: "created_at",
                         type: "timestamp",
