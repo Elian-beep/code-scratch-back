@@ -13,7 +13,13 @@ export class Student{
     user: string;
 
     @Column()
-    password: string;
+    cpf: string;
+
+    @Column()
+    email: string;
+
+    @CreateDateColumn()
+    birthday: Date;
 
     @CreateDateColumn()
     created_at: Date;

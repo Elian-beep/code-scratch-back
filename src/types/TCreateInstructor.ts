@@ -1,4 +1,4 @@
-export type ICreateInstructor = {
+export type TCreateInstructor = {
     name: string;
     user: string;
     password: string;

@@ -1,10 +1,10 @@
 import { connectionSource } from "../../database/ormconfig";
 import { Instructor } from "../../entities/Instructor";
-import { ICreateInstructor } from "../../types/TCreateInstructor";
+import { TCreateInstructor } from "../../types/TCreateInstructor";
 import bcrypt from "bcrypt";
 
 export class CreateInstructorService{
-    async execute({ name, user, password, repeatPassword }: ICreateInstructor): Promise<Instructor | Error>{
+    async execute({ name, user, password, repeatPassword }: TCreateInstructor): Promise<Instructor | Error>{
         const repo = connectionSource.getRepository(Instructor);
 
         if(await repo.findOne({ where: { user } })) return new Error("Nome de usuário ja existente!");

@@ -19,7 +19,7 @@ export class Classroom{
     created_at: Date;
 
     @Column()
-    link: string;
+    link_video: string;
 
     @ManyToOne(() => Instructor)
     @JoinColumn({ name: "instructor_id" })

@@ -1,6 +1,6 @@
 import { connectionSource } from "../../database/ormconfig"
 import bcrypt from 'bcrypt';
-import { TokenService } from "./TokenService";
+import { TokenInstructorService } from "./TokenInstructorService";
 import { Instructor } from "../../entities/Instructor";
 import { TDataAuth } from "../../types/TDataAuth";
 
@@ -16,7 +16,7 @@ export class AuthInstructorService {
         if (!realPassword)
             return new Error("Erro na autenticação");
 
-        const tokenService = new TokenService();
+        const tokenService = new TokenInstructorService();
         const token = tokenService.generate(instructor[0].id);
         return token;
     }

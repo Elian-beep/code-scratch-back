@@ -18,8 +18,14 @@ export class CreateStudent1691715921842 implements MigrationInterface {
                         name: "user",
                         type: "varchar"
                     },{
-                        name: "password",
+                        name: "cpf",
                         type: "varchar"
+                    },{
+                        name: "email",
+                        type: "varchar"
+                    },{
+                        name: "birthday",
+                        type: "timestamp",
                     },{
                         name: "created_at",
                         type: "timestamp",

@@ -1,11 +1,11 @@
 import { Request, Response, NextFunction } from "express";
-import { TokenService } from "../../services/auth/TokenService";
+import { TokenInstructorService } from "../../services/auth/TokenInstructorService";
 
 export class TokenController{
     async handleCheck(request: Request, response: Response, next: NextFunction){
         try{
             const authHeader = request.headers['authorization'];
-            const service = new TokenService();
+            const service = new TokenInstructorService();
             if (!authHeader)
                 return response.status(500).json({ message: "Erro na autenticação" })
 
