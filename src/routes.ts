@@ -6,11 +6,17 @@ import { TokenController } from "./controllers/auth/TokenController";
 import { DeleteInstructorController } from "./controllers/instructor/DeleteInstructorController";
 import { UpdateInstructorController } from "./controllers/instructor/UpdateInstructorController";
 import { CreateCategoryController } from "./controllers/category/CreateCategoryController";
+import { GetAllCategoryController } from "./controllers/category/GetAllCategoryController";
+import { UpdateCategoryController } from "./controllers/category/UpdateCategoryController";
+import { DeleteCategoryController } from "./controllers/category/DeleteCategoryController";
 
 const routes = Router();
 
 routes
+    .get("/category", new TokenController().handleCheck, new GetAllCategoryController().handle)
     .post("/category", new TokenController().handleCheck, new CreateCategoryController().handle)
+    .put("/category/:id", new TokenController().handleCheck, new UpdateCategoryController().handle)
+    .delete("/category/:id", new TokenController().handleCheck, new DeleteCategoryController().handle)
 
 routes
     .get("/instructor", new TokenController().handleCheck, new GetAllInstructorController().handle)
