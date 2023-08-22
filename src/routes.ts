@@ -13,6 +13,8 @@ import { GetAllStudentController } from "./controllers/student/GetAllStudentCont
 import { CreateStudentController } from "./controllers/student/CreateStudentController";
 import { UpdateStudentController } from "./controllers/student/UpdateStudentController";
 import { DeleteStudentController } from "./controllers/student/DeleteStudentService";
+import { GetAllClassroomController } from "./controllers/classroom/GetAllClassroomController";
+import { CreateClassroomController } from "./controllers/classroom/CreateClassroomController";
 
 const routes = Router();
 
@@ -33,6 +35,10 @@ routes
     .post("/instructor", new CreateInstructorController().handle)
     .put("/instructor/:id", new TokenController().handleCheck, new UpdateInstructorController().handle)
     .delete("/instructor/:id", new TokenController().handleCheck, new DeleteInstructorController().handle)
+
+routes
+    .get("/classroom", new TokenController().handleCheck, new GetAllClassroomController().handle)
+    .post("/classroom", new TokenController().handleCheck, new CreateClassroomController().handle)
 
 routes
     .post("/instructor/auth", new  AuthInstructorController().handle)

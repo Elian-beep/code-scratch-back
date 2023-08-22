@@ -3,7 +3,7 @@ import { v4 as uuid } from 'uuid';
 import { Instructor } from './Instructor';
 import { Category } from './Category';
 
-@Entity("Classroom")
+@Entity("classroom")
 export class Classroom{
 
     @PrimaryColumn()
@@ -23,14 +23,19 @@ export class Classroom{
 
     @Column()
     watched: boolean;
+    
+    @Column()
+    instructor_id: string;
+    @Column()
+    category_id: string;
 
     @ManyToOne(() => Instructor)
     @JoinColumn({ name: "instructor_id" })
-    instructor_id: Instructor;
+    instructor: Instructor;
 
     @ManyToOne(() => Category)
     @JoinColumn({ name: "category_id" })
-    category_id: Category;
+    category: Category;
 
     constructor(){
         if(!this.id) this.id = uuid();
