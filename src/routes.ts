@@ -9,6 +9,10 @@ import { CreateCategoryController } from "./controllers/category/CreateCategoryC
 import { GetAllCategoryController } from "./controllers/category/GetAllCategoryController";
 import { UpdateCategoryController } from "./controllers/category/UpdateCategoryController";
 import { DeleteCategoryController } from "./controllers/category/DeleteCategoryController";
+import { GetAllStudentController } from "./controllers/student/GetAllStudentController";
+import { CreateStudentController } from "./controllers/student/CreateStudentController";
+import { UpdateStudentController } from "./controllers/student/UpdateStudentController";
+import { DeleteStudentController } from "./controllers/student/DeleteStudentService";
 
 const routes = Router();
 
@@ -17,6 +21,12 @@ routes
     .post("/category", new TokenController().handleCheck, new CreateCategoryController().handle)
     .put("/category/:id", new TokenController().handleCheck, new UpdateCategoryController().handle)
     .delete("/category/:id", new TokenController().handleCheck, new DeleteCategoryController().handle)
+
+routes
+    .get("/student", new TokenController().handleCheck, new GetAllStudentController().handle)
+    .post("/student", new TokenController().handleCheck, new CreateStudentController().handle)
+    .put("/student/:id", new TokenController().handleCheck, new UpdateStudentController().handle)
+    .delete("/student/:id", new TokenController().handleCheck, new DeleteStudentController().handle)
 
 routes
     .get("/instructor", new TokenController().handleCheck, new GetAllInstructorController().handle)
