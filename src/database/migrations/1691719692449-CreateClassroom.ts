@@ -28,6 +28,9 @@ export class CreateClassroom1691719692449 implements MigrationInterface {
                         name: "link_video",
                         type: "varchar"
                     },{
+                        name: "watched",
+                        type: "boolean"
+                    },{
                         name: "category_id",
                         type: "uuid",
                     }

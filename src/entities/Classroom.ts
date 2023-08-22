@@ -21,6 +21,9 @@ export class Classroom{
     @Column()
     link_video: string;
 
+    @Column()
+    watched: boolean;
+
     @ManyToOne(() => Instructor)
     @JoinColumn({ name: "instructor_id" })
     instructor_id: Instructor;
