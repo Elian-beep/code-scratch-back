@@ -10,9 +10,7 @@ export class UpdateInstructorController{
             const service = new UpdateInstructorService();
             const result = await service.execute({ id, name, user });
 
-            if(result instanceof Error){
-                return response.status(400).json(result.message);
-            }
+            if(result instanceof Error) return response.status(400).json(result.message);
     
             return response.status(200).json(result);
         }catch(error){

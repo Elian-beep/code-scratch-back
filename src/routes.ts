@@ -15,6 +15,8 @@ import { UpdateStudentController } from "./controllers/student/UpdateStudentCont
 import { DeleteStudentController } from "./controllers/student/DeleteStudentService";
 import { GetAllClassroomController } from "./controllers/classroom/GetAllClassroomController";
 import { CreateClassroomController } from "./controllers/classroom/CreateClassroomController";
+import { UpdateClassroomController } from "./controllers/classroom/UpdateClassroomController";
+import { DeleteClassroomController } from "./controllers/classroom/DeleteClassroomController";
 
 const routes = Router();
 
@@ -39,6 +41,8 @@ routes
 routes
     .get("/classroom", new TokenController().handleCheck, new GetAllClassroomController().handle)
     .post("/classroom", new TokenController().handleCheck, new CreateClassroomController().handle)
+    .put("/classroom/:id", new TokenController().handleCheck, new UpdateClassroomController().handle)
+    .delete("/classroom/:id", new TokenController().handleCheck, new DeleteClassroomController().handle)
 
 routes
     .post("/instructor/auth", new  AuthInstructorController().handle)
