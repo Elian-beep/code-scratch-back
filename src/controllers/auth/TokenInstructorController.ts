@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from "express";
 import { TokenInstructorService } from "../../services/auth/TokenInstructorService";
 
-export class TokenController{
+export class TokenInstructorController{
     async handleCheck(request: Request, response: Response, next: NextFunction){
         try{
             const authHeader = request.headers['authorization'];

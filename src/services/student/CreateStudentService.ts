@@ -1,6 +1,7 @@
 import { connectionSource } from "../../database/ormconfig";
 import { Student } from "../../entities/Student";
 import { TCreateStudent } from "../../types/TCreateStudent";
+import bcrypt from "bcrypt";
 
 export class CreateStudentService{
     async execute({ name, user, cpf, email, birthday }: TCreateStudent){
@@ -15,8 +16,11 @@ export class CreateStudentService{
             Number(dateParts[0])
         );
 
+        const salt = await bcrypt.genSalt(12);
+        const passwordHash = await bcrypt.hash(cpf, salt);
+
         const student = repo.create({
-            name, user, cpf, email, birthday: birthDate
+            name, user, cpf, email, birthday: birthDate, password: passwordHash
         });
 
         await repo.save(student);

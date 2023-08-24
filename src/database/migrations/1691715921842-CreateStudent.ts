@@ -24,6 +24,9 @@ export class CreateStudent1691715921842 implements MigrationInterface {
                         name: "email",
                         type: "varchar"
                     },{
+                        name: "password",
+                        type: "string"
+                    },{
                         name: "birthday",
                         type: "timestamp",
                     },{

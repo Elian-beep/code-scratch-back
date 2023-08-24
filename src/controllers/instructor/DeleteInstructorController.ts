@@ -5,7 +5,7 @@ export class DeleteInstructorController{
     async handle(request: Request, response: Response){
         try{
             const { id } = request.params;
-            const service = new DeleteInstructorService
+            const service = new DeleteInstructorService()
             const result = await service.execute(id);
     
             if(result instanceof Error){

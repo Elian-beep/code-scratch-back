@@ -18,6 +18,9 @@ export class Student{
     @Column()
     email: string;
 
+    @Column()
+    password: string;
+
     @CreateDateColumn()
     birthday: Date;
 
