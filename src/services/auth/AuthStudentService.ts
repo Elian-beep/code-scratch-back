@@ -17,7 +17,17 @@ export class AuthStudentService{
         if(!realPassword) return new Error("Erro na autenticação de estudante");
 
         const tokenService = new TokenStudentService();
-        const token = tokenService.generate(student.id);
-        return token;
+        const token = await tokenService.generate(student.id);
+        return {
+            token,
+            student: {
+                id: student.id,
+                name: student.name,
+                user: student.user,
+                email: student.email,
+                cpf: student.cpf,
+                birthday: student.birthday
+            }
+        };
     }
 }

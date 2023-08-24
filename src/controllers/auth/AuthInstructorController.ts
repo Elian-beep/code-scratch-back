@@ -10,6 +10,7 @@ export class AuthInstructorController {
             const result = await service.execute({
                 user, password
             });
+            
     
             if (result instanceof Error)
                 return response.status(500).json(result.message);
