@@ -19,6 +19,9 @@ import { UpdateClassroomController } from "./controllers/classroom/UpdateClassro
 import { DeleteClassroomController } from "./controllers/classroom/DeleteClassroomController";
 import { AuthStudentController } from "./controllers/auth/AuthStudentController";
 import { TokenStudentController } from "./controllers/auth/TokenStudentController";
+import { CheckTokenStudentController } from "./controllers/auth/CheckTokenStudentController";
+import { GetClassroomByCategoryController } from "./controllers/classroom/GetClassroomByCategoryController";
+import { GetClassroomByIdController } from "./controllers/classroom/GetClassroomByIdController";
 
 const routes = Router();
 
@@ -51,6 +54,9 @@ routes
 
 routes
     .get("/student/classroom", new TokenStudentController().handleCheck, new GetAllClassroomController().handle)
+    .get("/student/category", new TokenStudentController().handleCheck, new GetAllCategoryController().handle)
+    .get("/student/classroom_category/:id_category", new TokenStudentController().handleCheck, new GetClassroomByCategoryController().handle)
+    .get("/student/classroom/:id", new TokenStudentController().handleCheck, new GetClassroomByIdController().handle)
 
 routes
     .post("/student/auth", new AuthStudentController().handle)
