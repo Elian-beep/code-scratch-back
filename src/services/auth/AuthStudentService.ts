@@ -26,7 +26,8 @@ export class AuthStudentService{
                 user: student.user,
                 email: student.email,
                 cpf: student.cpf,
-                birthday: student.birthday
+                birthday: student.birthday,
+                photo: student.photo
             }
         };
     }

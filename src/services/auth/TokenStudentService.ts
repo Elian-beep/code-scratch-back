@@ -10,6 +10,7 @@ export class TokenStudentService{
             },
             secret,
             {
+                // expiresIn: 30
                 expiresIn: 3600
             }
         );
@@ -21,8 +22,15 @@ export class TokenStudentService{
         if(!token) return new Error("Acesso negado");
 
         const secret = process.env.SECRET_STUDENT;
-        jwt.verify(token, secret);
-        console.log("Token válido para estudante");
-        return true;
+
+        
+        if(jwt.verify(token, secret)){
+            console.log("Token válido para estudante");
+            return true;
+        }else{
+            console.log("Falha ao autenticar estudante");
+            return false;
+        }
+
     }
 }

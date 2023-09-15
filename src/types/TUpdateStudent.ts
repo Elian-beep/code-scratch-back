@@ -5,4 +5,5 @@ export type TUpdateStudent = {
     cpf: string;
     email: string;
     birthday: string;
+    photo: string;
 }

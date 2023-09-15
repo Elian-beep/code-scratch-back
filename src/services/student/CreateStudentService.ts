@@ -4,7 +4,7 @@ import { TCreateStudent } from "../../types/TCreateStudent";
 import bcrypt from "bcrypt";
 
 export class CreateStudentService{
-    async execute({ name, user, cpf, email, birthday }: TCreateStudent){
+    async execute({ name, user, cpf, email, birthday, photo }: TCreateStudent){
         const repo = connectionSource.getRepository(Student);
 
         if(await repo.findOne({where: { cpf }})) return new Error("Aluna ja cadastrada com este cpf");
@@ -20,7 +20,7 @@ export class CreateStudentService{
         const passwordHash = await bcrypt.hash(cpf, salt);
 
         const student = repo.create({
-            name, user, cpf, email, birthday: birthDate, password: passwordHash
+            name, user, cpf, email, birthday: birthDate, password: passwordHash, photo
         });
 
         await repo.save(student);

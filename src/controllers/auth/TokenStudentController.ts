@@ -10,12 +10,13 @@ export class TokenStudentController{
 
             const token = authHeader && authHeader.split(" ")[1];
             const result = service.check(token)
-
-            if (!result) return response.status(500).json(result);
+            console.log('result -> ', result);
+            
+            if (!result) return response.status(401).json({message: 'Erro na autenticação ou Token expirado'});
 
             next();
         }catch(error){
-            return response.status(500).json({ erro: `Ocorreu um erro no token: ${error}` });
+            return response.status(401).json({ erro: `Ocorreu um erro no token: ${error}` });
         }
     }
 }

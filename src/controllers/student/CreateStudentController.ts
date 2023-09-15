@@ -4,10 +4,10 @@ import { CreateStudentService } from "../../services/student/CreateStudentServic
 export class CreateStudentController{
     async handle(request: Request, response: Response){
         try{
-            const { name, user, cpf, email, birthday } = request.body;
+            const { name, user, cpf, email, birthday, photo } = request.body;
             const service = new CreateStudentService();
             const result = await service.execute({
-                name, user, cpf, email, birthday
+                name, user, cpf, email, birthday, photo
             });
 
             if(result instanceof Error) return response.status(400).json(result.message);

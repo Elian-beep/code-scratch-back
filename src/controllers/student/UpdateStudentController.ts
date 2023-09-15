@@ -5,11 +5,11 @@ export class UpdateStudentController{
     async handle(request: Request, response: Response){
         try{
             const { id } = request.params;
-            const { name, user, cpf, email, birthday } = request.body;
+            const { name, user, cpf, email, birthday, photo } = request.body;
 
             const service = new UpdateStudentService();
             const result = await service.execute({
-                id, name, user, cpf, email, birthday
+                id, name, user, cpf, email, birthday, photo
             });
 
             if(result instanceof Error){

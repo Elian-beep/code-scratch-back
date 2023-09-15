@@ -25,11 +25,15 @@ export class CreateStudent1691715921842 implements MigrationInterface {
                         type: "varchar"
                     },{
                         name: "password",
-                        type: "string"
+                        type: "varchar"
                     },{
                         name: "birthday",
                         type: "timestamp",
                     },{
+                        name: "photo",
+                        type: "varchar"
+                    },
+                    {
                         name: "created_at",
                         type: "timestamp",
                         default: "now()"

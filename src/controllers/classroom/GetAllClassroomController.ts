@@ -1,4 +1,4 @@
-import { Request, Response, json } from "express";
+import { Request, Response } from "express";
 import { GetAllClassroomService } from "../../services/classroom/GetAllClassroomService";
 
 export class GetAllClassroomController{

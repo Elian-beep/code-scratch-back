@@ -4,4 +4,5 @@ export type TCreateStudent = {
     cpf: string;
     email: string;
     birthday: string;
+    photo: string;
 }

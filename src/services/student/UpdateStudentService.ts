@@ -3,7 +3,7 @@ import { Student } from "../../entities/Student";
 import { TUpdateStudent } from "../../types/TUpdateStudent";
 
 export class UpdateStudentService {
-    async execute({ id, name, user, cpf, email, birthday }: TUpdateStudent) {
+    async execute({ id, name, user, cpf, email, birthday, photo }: TUpdateStudent) {
         const repo = connectionSource.getRepository(Student);
         const student = await repo.findOne({ where: { id } });
 
@@ -23,6 +23,7 @@ export class UpdateStudentService {
         student.user = user ? user : student.user;
         student.cpf = cpf ? cpf : student.cpf;
         student.email = email ? email : student.email;
+        student.photo = photo ? photo : student.photo;
 
         await repo.save(student);
         return student;
