@@ -20,8 +20,8 @@ export const connectionSource = new DataSource(
         "logging": true,
         "entities": ["src/entities/*.ts"],
         "migrations": ["src/database/migrations/*.ts"],
-        "extra": {
-            "ssl": true
-        }
+        // "extra": {
+        //     "ssl": true
+        // }
     }
 );
