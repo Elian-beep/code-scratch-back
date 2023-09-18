@@ -1,4 +1,4 @@
-import { Column, CreateDateColumn, Entity, PrimaryColumn } from 'typeorm';
+import { Column, CreateDateColumn, Entity, Index, PrimaryColumn, Unique } from 'typeorm';
 import { v4 as uuid } from 'uuid';
 
 @Entity("category")
@@ -11,6 +11,10 @@ export class Category{
 
     @CreateDateColumn()
     created_at: Date;
+
+    @Column()
+    @Index({ unique: true })
+    order: number;
 
     constructor(){
         if(!this.id) this.id = uuid();

@@ -18,6 +18,10 @@ export class CreateCategory1691715936689 implements MigrationInterface {
                         name: "created_at",
                         type: "timestamp",
                         default: "now()"
+                    },{
+                        name: "order",
+                        type: "bigint",
+                        isUnique: true
                     }
                 ]
             })

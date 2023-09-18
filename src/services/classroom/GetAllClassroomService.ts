@@ -12,6 +12,7 @@ export class GetAllClassroomService {
                 "classroom.id",
                 "classroom.title",
                 "classroom.link_video",
+                "classroom.order",
                 "instructor.id",
                 "instructor.name",
                 "category.id",

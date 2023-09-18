@@ -6,10 +6,10 @@ export class UpdateClassroomController{
     async handle(request: Request, response: Response){
         try{
             const { id } = request.params;
-            const { title, description, link_video, category_id } = request.body;
+            const { title, description, link_video, category_id, order } = request.body;
 
             const service = new UpdateClassroomService();
-            const result = await service.execute({ id, title, description, link_video, category_id });
+            const result = await service.execute({ id, title, description, link_video, category_id, order });
             
             if(result instanceof Error) return response.status(400).json(result.message);
 

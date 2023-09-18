@@ -13,6 +13,7 @@ export class GetClassroomByIdService{
                 "classroom.title",
                 "classroom.link_video",
                 "classroom.description",
+                "classroom.order",
                 "instructor.name",
                 "category.description"
             ])

@@ -1,4 +1,4 @@
-import { Column, CreateDateColumn, Entity, JoinColumn, ManyToOne, PrimaryColumn } from 'typeorm';
+import { Column, CreateDateColumn, Entity, Index, JoinColumn, ManyToOne, PrimaryColumn } from 'typeorm';
 import { v4 as uuid } from 'uuid';
 import { Instructor } from './Instructor';
 import { Category } from './Category';
@@ -23,6 +23,10 @@ export class Classroom{
 
     @Column()
     watched: boolean;
+
+    @Column()
+    @Index({ unique: true })
+    order: number
     
     @Column()
     instructor_id: string;

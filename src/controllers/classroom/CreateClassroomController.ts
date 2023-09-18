@@ -4,10 +4,10 @@ import { CreateClassroomService } from "../../services/classroom/CreateClassroom
 export class CreateClassroomController{
     async handle(request: Request, response: Response){
         try{
-            const { title, description, link_video, watched, instructor_id, category_id } = request.body;
+            const { title, description, link_video, watched, instructor_id, category_id, order } = request.body;
             const service = new CreateClassroomService();
             const result = await service.execute({
-                title, description, link_video, watched, instructor_id, category_id
+                title, description, link_video, watched, instructor_id, category_id, order
             });
 
             if(result instanceof Error) return response.status(400).json(result.message);

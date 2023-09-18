@@ -5,4 +5,5 @@ export type TCreateClassroom = {
     watched: boolean;
     instructor_id: string;
     category_id: string;
+    order: number;
 }
