@@ -9,7 +9,7 @@
     "dev": "ts-node-dev --transpile-only src/server.ts",
     "typeorm": "ts-node-dev node_modules/typeorm/cli.js",
     "migration:create": "cross-env typeorm migration:create",
-    "migration:create-custom": "node create-migration.ts",
+    "migration:create-custom": "node src/database/create-migration.ts",
     "migration:up": "node_modules/.bin/ts-node node_modules/typeorm/cli.js migration:run -d src/database/ormconfig.ts",
     "migration:down": "node_modules/.bin/ts-node node_modules/typeorm/cli.js migration:revert -d src/database/ormconfig.ts"
   },
