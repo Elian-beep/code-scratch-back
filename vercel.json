@@ -1,5 +1,6 @@
 {
   "version": 2,
+  "devCommand": "yarn dev",
   "builds": [
     {
       "src": "src/server.ts",
@@ -9,7 +10,7 @@
   "routes": [
     {
       "src": "(.*)",
-      "dest": "src/server.ts"
+      "dest": "/src/server.ts"
     }
   ]
 }
