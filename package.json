@@ -7,6 +7,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "ts-node-dev --transpile-only src/server.ts",
+    "vercel-build": "echo hello",
     "typeorm": "ts-node-dev node_modules/typeorm/cli.js",
     "migration:create": "cross-env typeorm migration:create",
     "migration:create-custom": "node create-migration.ts",
