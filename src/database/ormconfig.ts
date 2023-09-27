@@ -14,7 +14,7 @@ export const connectionSource = new DataSource(
         // "database": process.env.POSTGRES_DATABASE,
         "synchronize": false,
         "logging": true,
-        "entities": ["src/entities/*.ts"],
-        "migrations": ["src/database/migrations/*.ts"],
+        "entities": ["src/entities/*.js"],
+        "migrations": ["src/database/migrations/*.js"],
     }
 );
