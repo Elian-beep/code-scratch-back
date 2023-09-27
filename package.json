@@ -14,6 +14,7 @@
     "migration:down": "node_modules/.bin/ts-node node_modules/typeorm/cli.js migration:revert -d src/database/ormconfig.ts"
   },
   "dependencies": {
+    "axios": "^1.5.1",
     "bcrypt": "^5.1.0",
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
