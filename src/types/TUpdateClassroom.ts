@@ -4,4 +4,5 @@ export type TUpdateClassroom = {
     description: string;
     link_video: string;
     category_id: string;
+    order: number;
 }

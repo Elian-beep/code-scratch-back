@@ -4,7 +4,7 @@ import { Classroom } from "../../entities/Classroom";
 import { TUpdateClassroom } from "../../types/TUpdateClassroom";
 
 export class UpdateClassroomService{
-    async execute({ id, title, description, link_video, category_id }: TUpdateClassroom){
+    async execute({ id, title, description, link_video, category_id, order }: TUpdateClassroom){
         const repo = connectionSource.getRepository(Classroom);
         const repoCategory = connectionSource.getRepository(Category);
         const classroom = await repo.findOne({ where: {id} });
@@ -16,6 +16,7 @@ export class UpdateClassroomService{
         classroom.description = description ? description : classroom.description;
         classroom.link_video = link_video ? link_video : classroom.link_video;
         classroom.category_id = category_id ? category_id : classroom.category_id;
+        classroom.order = order ? order : classroom.order;
 
         await repo.save(classroom);
         return classroom;

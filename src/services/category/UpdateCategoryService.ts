@@ -3,7 +3,7 @@ import { Category } from "../../entities/Category";
 import { TUpdateCategory } from "../../types/TUpdateCategory";
 
 export class UpdateCategoryService{
-    async execute({ id, description }: TUpdateCategory){
+    async execute({ id, description, order }: TUpdateCategory){
         const repo = connectionSource.getRepository(Category);
         const category = await repo.findOne({where: {id}});
 
@@ -11,6 +11,7 @@ export class UpdateCategoryService{
 
         category.created_at = category.created_at;
         category.description = description ? description : category.description;
+        category.order = order ? order : category.order;
 
         await repo.save(category);
         return category;

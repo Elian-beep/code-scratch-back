@@ -13,12 +13,14 @@ export class GetClassroomByCategoryService{
                 "classroom.id",
                 "classroom.title",
                 "classroom.link_video",
+                "classroom.order",
                 "instructor.id",
                 "instructor.name",
                 "category.id",
                 "category.description"
             ])
             .where({ category_id: id_category })
+            .orderBy("classroom.order", "ASC")
             .getMany()
         return classrooms;
     }

@@ -33,6 +33,9 @@ export class CreateClassroom1691719692449 implements MigrationInterface {
                     },{
                         name: "category_id",
                         type: "uuid",
+                    },{
+                        name: "order",
+                        type: "bigint"
                     }
                 ],
                 foreignKeys: [

@@ -5,11 +5,11 @@ export class UpdateCategoryController{
     async handle(request: Request, response: Response){
         try{
             const { id } = request.params;
-            const { name, description } = request.body;
+            const { name, description, order } = request.body;
     
             const service = new UpdateCategoryService();
     
-            const result = await service.execute({ id, description });
+            const result = await service.execute({ id, description, order });
     
             if(result instanceof Error) return response.status(400).json(result.message);
             

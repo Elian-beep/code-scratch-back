@@ -7,6 +7,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "ts-node-dev --transpile-only src/server.ts",
+    "vercel-build": "echo hello",
     "typeorm": "ts-node-dev node_modules/typeorm/cli.js",
     "migration:create": "cross-env typeorm migration:create",
     "migration:create-custom": "node create-migration.ts",
@@ -14,6 +15,7 @@
     "migration:down": "node_modules/.bin/ts-node node_modules/typeorm/cli.js migration:revert -d src/database/ormconfig.ts"
   },
   "dependencies": {
+    "@vercel/postgres": "^0.5.0",
     "bcrypt": "^5.1.0",
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
