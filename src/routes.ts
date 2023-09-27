@@ -22,8 +22,13 @@ import { TokenStudentController } from "./controllers/auth/TokenStudentControlle
 import { CheckTokenStudentController } from "./controllers/auth/CheckTokenStudentController";
 import { GetClassroomByCategoryController } from "./controllers/classroom/GetClassroomByCategoryController";
 import { GetClassroomByIdController } from "./controllers/classroom/GetClassroomByIdController";
+import { Request, Response } from 'express';
 
 const routes = Router();
+
+routes.get("/", (req: Request, res: Response) => {
+    res.send("Code Scratch Service está acordado")
+})
 
 routes
     .get("/category", new TokenInstructorController().handleCheck, new GetAllCategoryController().handle)
