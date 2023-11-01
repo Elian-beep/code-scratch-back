@@ -60,7 +60,7 @@ routes
     .post("/instructor/auth", new  AuthInstructorController().handle)
 
 routes
-    .get("/student/classroom", new TokenStudentController().handleCheck, new GetAllClassroomController().handle)
+    .get("/student/classroom", new TokenStudentController() .handleCheck, new GetAllClassroomController().handle)
     .get("/student/category", new TokenStudentController().handleCheck, new GetAllCategoryController().handle)
     .get("/student/classroom_category/:id_category", new TokenStudentController().handleCheck, new GetClassroomByCategoryController().handle)
     .get("/student/classroom/:id", new TokenStudentController().handleCheck, new GetClassroomByIdController().handle)
