@@ -23,6 +23,8 @@ import { CheckTokenStudentController } from "./controllers/auth/CheckTokenStuden
 import { GetClassroomByCategoryController } from "./controllers/classroom/GetClassroomByCategoryController";
 import { GetClassroomByIdController } from "./controllers/classroom/GetClassroomByIdController";
 import { Request, Response } from 'express';
+import { CreateStudentClassroomController } from "./controllers/studentClassroom/CreateStudentClassroomController";
+import { GetClassroomsForStudentController } from "./controllers/studentClassroom/GetClassroomsForStudentController";
 
 const routes = Router();
 
@@ -62,6 +64,9 @@ routes
     .get("/student/category", new TokenStudentController().handleCheck, new GetAllCategoryController().handle)
     .get("/student/classroom_category/:id_category", new TokenStudentController().handleCheck, new GetClassroomByCategoryController().handle)
     .get("/student/classroom/:id", new TokenStudentController().handleCheck, new GetClassroomByIdController().handle)
+    
+    .post("/student/student_classroom", new TokenStudentController().handleCheck, new CreateStudentClassroomController().handle)
+    .get("/student/student_classroom/:id_student", new TokenStudentController().handleCheck, new GetClassroomsForStudentController().handle)
 
 routes
     .post("/student/auth", new AuthStudentController().handle)
