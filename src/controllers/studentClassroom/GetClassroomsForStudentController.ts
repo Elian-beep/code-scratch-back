@@ -11,7 +11,8 @@ export class GetClassroomsForStudentController{
             if(result instanceof Error) return response.status(400).json(result.message);
             return response.status(200).json({ nClassrooms: result})
         }catch(error){
-            return response.status(500).json({ erro: `Ocorreu um erro ao buscar aulas para este aluno` })
+            console.log(error);
+            return response.status(500).json({ erro: `Ocorreu um erro ao buscar aulas para este aluno: ${error}` })
         }
     }
 }
