@@ -11,7 +11,9 @@
     "migration:create-custom": "node create-migration.ts",
     "migration:up": "node_modules/.bin/ts-node node_modules/typeorm/cli.js migration:run -d src/database/ormconfig.ts",
     "migration:down": "node_modules/.bin/ts-node node_modules/typeorm/cli.js migration:revert -d src/database/ormconfig.ts",
-    "deploy": "yarn migration:up && yarn dev"
+    "deploy": "yarn migration:up && yarn dev",
+    "build": "rm -rf ./dist && tsc",
+    "start": "node ./dist/server.js"
 
   },
   "dependencies": {
