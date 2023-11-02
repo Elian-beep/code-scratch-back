@@ -1,8 +1,8 @@
 {
   "name": "code-scratch-back",
   "version": "1.0.0",
+  "main": "index.js",
   "repository": "git@github.com:Elian-beep/code-scratch-back.git",
-  "main": "server.js",
   "author": "Elian-beep <elianoliver101@gmail.com>",
   "license": "MIT",
   "scripts": {
@@ -12,9 +12,7 @@
     "migration:create-custom": "node create-migration.ts",
     "migration:up": "node_modules/.bin/ts-node node_modules/typeorm/cli.js migration:run -d src/database/ormconfig.ts",
     "migration:down": "node_modules/.bin/ts-node node_modules/typeorm/cli.js migration:revert -d src/database/ormconfig.ts",
-    "deploy": "yarn migration:up && yarn dev",
-    "build": "rm -rf ./dist && tsc",
-    "start": "node ./dist/server.js"
+    "deploy": "yarn migration:up && yarn dev"
 
   },
   "dependencies": {
