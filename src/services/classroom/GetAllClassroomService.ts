@@ -11,6 +11,7 @@ export class GetAllClassroomService {
             .select([
                 "classroom.id",
                 "classroom.title",
+                // "classroom.description", 
                 "classroom.link_video",
                 "classroom.order",
                 "instructor.id",

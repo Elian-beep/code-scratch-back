@@ -10,8 +10,8 @@ export class CreateStudentClassroomService{
         const repoStudent = connectionSource.getRepository(Student);
         const repoClassroom = connectionSource.getRepository(Classroom);
 
-        const student = repoStudent.findOne({ where: {id: id_student} });
-        const classroom = repoClassroom.findOne({ where: {id: id_classroom} });
+        const student = await repoStudent.findOne({ where: {id: id_student} });
+        const classroom = await repoClassroom.findOne({ where: {id: id_classroom} });
 
         if(!student) return new Error("Estudante não encontrada");
         if(!classroom) return new Error("Aula não encontrada");
